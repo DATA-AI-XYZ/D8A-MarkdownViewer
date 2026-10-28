@@ -5,7 +5,7 @@ portable exe: nothing to install, no administrator rights. Zoe, the built-in doc
 about your files and cites the sections she used.
 
 This repository publishes the **releases** and the **user guide**. The source code is developed in a private D8A
-repository. A Mac version is in testing and is not released here yet.
+repository. A Mac version is in testing; its test builds are on the Releases page too (see [On a Mac](#on-a-mac-in-testing)).
 
 ## Download
 
@@ -22,6 +22,21 @@ your PC"; **More info › Run anyway** continues. To check a download, compare i
 ```powershell
 Get-FileHash .\MarkdownViewer-<version>-win-x64.exe -Algorithm SHA256
 ```
+
+### On a Mac (in testing)
+
+The Mac app is not released yet. Its test builds are on the [Releases page](../../releases) too, marked
+**Pre-release**; the current one is [write-mode-1](../../releases/tag/write-mode-1):
+
+| File | For |
+|---|---|
+| `MarkdownViewer-write-mode-1-macOS-AppleSilicon.zip` | Macs with an Apple chip (M1 and later) |
+| `MarkdownViewer-write-mode-1-macOS-Intel.zip` | Macs with an Intel processor |
+
+Double-click the zip, move **Markdown Viewer** to Applications and open it. Apple has not signed it, so the first
+start stops: on macOS 15 and later click **Done**, then **System Settings › Privacy & Security › Open Anyway**; on
+macOS 12 to 14 right-click the app, **Open**, then **Open**. The release notes say what is in the build, what is not
+yet, and how to run its self-test.
 
 ## What a PC needs
 
