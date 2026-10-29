@@ -26,17 +26,22 @@ Get-FileHash .\MarkdownViewer-<version>-win-x64.exe -Algorithm SHA256
 ### On a Mac (in testing)
 
 The Mac app is not released yet. Its test builds are on the [Releases page](../../releases) too, marked
-**Pre-release**; the current one is [write-mode-1](../../releases/tag/write-mode-1):
+**Pre-release**; the current one is [write-mode-3](../../releases/tag/write-mode-3):
 
 | File | For |
 |---|---|
-| `MarkdownViewer-write-mode-1-macOS-AppleSilicon.zip` | Macs with an Apple chip (M1 and later) |
-| `MarkdownViewer-write-mode-1-macOS-Intel.zip` | Macs with an Intel processor |
+| `MarkdownViewer-write-mode-3-macOS-AppleSilicon.zip` | Macs with an Apple chip (M1 and later) |
+| `SHA256SUMS.txt` | SHA-256 checksum of the zip (`shasum -a 256 <zip>` in Terminal shows yours) |
 
-Double-click the zip, move **Markdown Viewer** to Applications and open it. Apple has not signed it, so the first
-start stops: on macOS 15 and later click **Done**, then **System Settings › Privacy & Security › Open Anyway**; on
-macOS 12 to 14 right-click the app, **Open**, then **Open**. The release notes say what is in the build, what is not
-yet, and how to run its self-test.
+There is no Intel build at the moment. Double-click the zip, move **Markdown Viewer** to Applications (over an
+earlier test build, if there is one) and open it. Apple has not signed it, so the first start stops: on macOS 15 and
+later click **Done**, then **System Settings › Privacy & Security › Open Anyway**; on macOS 12 to 14 right-click the
+app, **Open**, then **Open**. The release notes say what is in the build, what is not yet, and how to run its
+self-test.
+
+On a Mac the app has Write mode, and Zoe keeps your API key in the macOS Keychain (as `MarkdownViewer/anthropic`).
+The first time a new test build reads a key an earlier build saved, macOS asks once: click **Always Allow**. Not
+there yet: Zoe's voice, and opening a `.md` file from Finder (use Open file, Open folder, or drag it onto the window).
 
 ## What a PC needs
 
@@ -111,8 +116,8 @@ Each question sends the question, the earlier turns of the conversation and the 
 characters at most) to api.anthropic.com, never whole files. A review sends each file, up to 12,000 characters,
 and some pairs of related files; the Review tab says the most it can send before it starts.
 
-The key is kept in Windows Credential Manager as `MarkdownViewer/anthropic`, never in the settings file, and is
-never shown, logged or put in an error message. **Remove saved key** in Zoe settings deletes it.
+The key is kept in Windows Credential Manager (on a Mac, the macOS Keychain) as `MarkdownViewer/anthropic`, never in
+the settings file, and is never shown, logged or put in an error message. **Remove saved key** in Zoe settings deletes it.
 
 ### Talk to Zoe
 
